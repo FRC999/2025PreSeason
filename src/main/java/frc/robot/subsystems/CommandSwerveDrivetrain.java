@@ -46,7 +46,12 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
     }
 
     public Command applyRequest(Supplier<SwerveRequest> requestSupplier) {
-        return run(() -> this.setControl(requestSupplier.get()));
+        return run(() -> { 
+             SwerveRequest sr = requestSupplier.get();
+             System.out.println("SR:"+sr.toString());
+             this.setControl(requestSupplier.get()) ;
+             }
+        );
     }
 
     private void startSimThread() {
