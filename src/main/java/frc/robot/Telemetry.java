@@ -106,5 +106,10 @@ public class Telemetry {
 
             SmartDashboard.putData("Module " + i, m_moduleMechanisms[i]);
         }
+
+        SmartDashboard.putString("P:", state.Pose.toString());
+        SmartDashboard.putString("M0A:", state.ModuleStates[0].toString());
+        SmartDashboard.putString("M1A:", state.ModuleStates[1].toString());
+
     }
 }
